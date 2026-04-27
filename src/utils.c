@@ -32,6 +32,10 @@
 #include <time.h>
 #ifndef _MSC_VER
 #include <sys/time.h>
+// `_strdup` is Microsoft's POSIX-conformant name for `strdup`. The rest of
+// the world has `strdup` only — alias it here so the call sites below don't
+// need per-platform branches.
+#define _strdup strdup
 #endif
 #include <inttypes.h>
 #include <ctype.h>
